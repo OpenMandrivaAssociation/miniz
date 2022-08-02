@@ -1,0 +1,26 @@
+From d4ad2bf51e9445c7d1efe8457da9cd38437ed8c5 Mon Sep 17 00:00:00 2001
+From: Davide Beatrici <git@davidebeatrici.dev>
+Date: Tue, 2 Aug 2022 19:25:10 +0200
+Subject: [PATCH] miniz.pc.in: fix include path not containing the "miniz"
+ suffix
+
+---
+ miniz.pc.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/miniz.pc.in b/miniz.pc.in
+index 95faf5f..350de7d 100644
+--- a/miniz.pc.in
++++ b/miniz.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+-includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
++includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@/@PROJECT_NAME@
+ 
+ Name: @PROJECT_NAME@
+ Description: @PROJECT_DESCRIPTION@
+-- 
+2.35.1
+

@@ -8,11 +8,12 @@
 Summary: A zlib replacement library
 Name:    miniz
 Version: 2.2.0
-Release: %mkrel 1
+Release: %mkrel 2
 License: MIT
 Group:   System/Libraries
 URL:     %{gitbase}/%{upstream}/%{name}
 Source0: %{gitbase}/%{upstream}/%{name}/archive/refs/tags/%{version}.tar.gz
+Patch0:  miniz.pc.in-fix-include-path-not-containing-the-mini.patch
 
 BuildRequires: cmake
 
@@ -45,7 +46,7 @@ Requires: %{libname} = %{version}-%{release}
 This package contains the %{name} development headers and libraries.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -p 1 -n %{name}-%{version}
 
 %build
 %cmake -DBUILD_EXAMPLES=OFF   \
