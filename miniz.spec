@@ -56,13 +56,15 @@ This package contains the %{name} development headers and libraries.
 %install
 %make_install -C build
 
+sed -i '/#include/s/"miniz.h"/<miniz.h>/g' examples/*
+
 mv %{buildroot}%{_datadir}/pkgconfig %{buildroot}%{_libdir}/
 
 %files -n %{libname}
 %{_libdir}/lib%{name}*.so.%{major}*
 
 %files -n %{devname}
-%doc ChangeLog.md readme.md
+%doc ChangeLog.md readme.md examples
 %license LICENSE
 %{_libdir}/lib%{name}*.so
 %{_includedir}/%{name}
