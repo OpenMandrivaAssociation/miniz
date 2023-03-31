@@ -8,7 +8,7 @@
 Summary: A zlib replacement library
 Name:    miniz
 Version: 2.2.0
-Release: %mkrel 2
+Release: 3
 License: MIT
 Group:   System/Libraries
 URL:     %{gitbase}/%{upstream}/%{name}
